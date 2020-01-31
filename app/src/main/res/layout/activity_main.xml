@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
@@ -11,28 +14,35 @@
         android:id="@+id/imageView"
         android:layout_width="145dp"
         android:layout_height="31dp"
-        android:background="@drawable/Kamuspintar"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/kamuspintar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/heade"
-        android:layout_width="438dp"
-        android:layout_height="210dp"
-        android:background="@drawable/header_kampus"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
-
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/main_sm_header"
+                    tools:listitem="@layout/main_sm_header"
+                    android:id="@+id/rs_univ"/>
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="145dp"
         android:layout_height="31dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
         android:background="@drawable/brsj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +54,8 @@
     <ImageView
         android:layout_width="82dp"
         android:layout_height="14dp"
-        android:background="@drawable/LihatSemua"
+        android:layout_margin="5dp"
+        android:background="@drawable/lihatlemua"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
@@ -52,5 +63,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.535" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_univ"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/listuniv"
+                android:background="#FFF"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
