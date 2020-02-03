@@ -5,9 +5,18 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.smarteist.autoimageslider.IndicatorAnimations;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     private Database db;
     private UnivAdapter adapter;
-    private List<UnivModel> notes = new ArrayList<>();
+    private List<UnivModel> univer = new ArrayList<>();
+    SliderView sliderMyuniv;
+    TextView greetText;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new Database(this);
-
         rvList = findViewById(R.id.rv_univ);
 
         adapter = new UnivAdapter(this);
@@ -35,18 +46,16 @@ public class MainActivity extends AppCompatActivity {
         rvList.setLayoutManager(layoutManager);
         rvList.setItemAnimator(new DefaultItemAnimator());
         rvList.setAdapter(adapter);
-
-
-    }
+     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        getNotes();
+        getUnivtast();
     }
 
-    private void getNotes() {
-        notes = db.getNotes();
-        adapter.setUniver(notes);
+    private void getUnivtast() {
+        univer = db.getUniv();
+        adapter.setUniver(univer);
     }
 }

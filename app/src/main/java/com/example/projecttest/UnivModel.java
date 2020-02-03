@@ -1,60 +1,99 @@
 package com.example.projecttest;
 
 public class UnivModel {
-    private int UnivID;
-    private String namaUniv;
-    private String Akre;
+    private int id;
+    private String nama;
+    private String akreditas;
     private String status;
+    private String jenis;
+    private String alamat;
+    private String kota;
+    private String provinsi;
+    private String website;
+    private String singkat;
 
-    public UnivModel(int UnivID, String namaUniv, String Akre, String status) {
-        this.UnivID = UnivID;
-        this.namaUniv = namaUniv;
-        this.Akre = Akre;
+
+
+    public UnivModel(int universitasID, String nama, String akreditas, String status, String jenis, String alamat, String kota, String provinsi, String website, String singkat) {
+        this.id = universitasID;
+        this.nama = nama;
+        this.akreditas = akreditas;
         this.status = status;
+        this.jenis = jenis;
+        this.alamat = alamat;
+        this.kota = kota;
+        this.provinsi = provinsi;
+        this.website = website;
+        this.singkat = singkat;
     }
 
-    public UnivModel(int UnivID, String namaUniv, String Akre) {
-        this.UnivID = UnivID;
-        this.namaUniv = namaUniv;
-        this.Akre = Akre;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public UnivModel(String namaUniv, String Akre, String status) {
-        this.namaUniv = namaUniv;
-        this.Akre = Akre;
-        this.status = status;
+    public String getNama() {
+        return nama;
     }
-
-    public int getUnivID() {
-        return UnivID;
-    }
-
-    public void setUnivID(int UnivID) {
-        this.UnivID = UnivID;
-    }
-
-    public String getNamaUniv() {
-        return namaUniv;
-    }
-
-    public void setNamaUniv(String namaUniv) {
-        this.namaUniv = namaUniv;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getAkre() {
-        return Akre;
+        return akreditas;
     }
-
-    public void setAkre(String Akre) {
-        this.Akre = Akre;
+    public void setAkreditas(String akreditas) {
+        this.akreditas = akreditas;
     }
 
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getJenis() {
+        return jenis;
+    }
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    public String getAlamat() { return alamat; }
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getKota() {
+        return kota;
+    }
+    public void setKota(String kota) {
+        this.kota = kota;
+    }
+
+    public String getProvinsi() {
+        return provinsi;
+    }
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getSingkat() {
+        return singkat;
+    }
+    public void setSingkat(String singkat) {
+        this.singkat = singkat;
+    }
+
 }
 

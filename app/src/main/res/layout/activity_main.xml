@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#FFFF"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -23,6 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -43,7 +44,7 @@
         android:layout_height="31dp"
         android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:background="@drawable/brsj"
+        android:background="@drawable/daftarkampus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -63,14 +64,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.535" />
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_univ"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/listuniv"
                 android:background="#FFF"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 </LinearLayout>
